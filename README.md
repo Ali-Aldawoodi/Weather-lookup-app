@@ -13,4 +13,4 @@ Dan- Instructor
 ## links
 ![Alt text](<Screenshot 2023-08-13 155047.png>)
 
-Deployed App:  
+Deployed App:  https://ali-aldawoodi.github.io/Weather-lookup-app/
