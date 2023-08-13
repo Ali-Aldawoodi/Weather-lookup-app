@@ -1,0 +1,26 @@
+* {
+    background-color: limegreen;
+}
+
+#weather {
+    color: yellow;
+    background-color: orange;
+    margin: 10px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#city-search {
+    color: yellow;
+}
+
+#submit {
+    background-color: white;
+}
+
+#search-bar {
+    background-color: white;
+}
+
