@@ -24,10 +24,10 @@ function getApi() {
 
             liveContainer.innerHTML = '';
 
-            const unixTimestamp = data.dt;
+            const unixTimestamp = data.dt; 
 
             const dateObject = new Date(unixTimestamp * 1000);
-
+            
             const formattedDate = `${(dateObject.getMonth() + 1).toString().padStart(2, '0')}/${dateObject.getDate().toString().padStart(2, '0')}/${dateObject.getFullYear()}`;
 
             var currentDay = document.createElement('h1');
@@ -39,22 +39,22 @@ function getApi() {
             liveContainer.append(city);
 
 
-            var weather = document.createElement('h2');
-            var date = document.createElement('div');
-            var humidity = document.createElement('div');
-            var windSpeed = document.createElement('div');
+                var weather = document.createElement('h2');
+                var date = document.createElement('div');
+                var humidity = document.createElement('div');
+                var windSpeed = document.createElement('div');
 
 
-            weather.textContent = 'Temperature: ' + data.main.temp + ' °F';
-            date.textContent = 'Date: ' + formattedDate;
-            humidity.textContent = 'Humidity: ' + data.main.humidity;
-            windSpeed.textContent = 'Wind Speed: ' + data.wind.speed + ' mph';
+                weather.textContent = 'Temperature: ' + data.main.temp + ' °F';
+                date.textContent = 'Date: ' + formattedDate;
+                humidity.textContent = 'Humidity: ' + data.main.humidity;
+                windSpeed.textContent = 'Wind Speed: ' + data.wind.speed + ' mph';
 
 
-            liveContainer.append(weather);
-            liveContainer.append(date);
-            liveContainer.append(humidity);
-            liveContainer.append(windSpeed)
+                liveContainer.append(weather);
+                liveContainer.append(date);
+                liveContainer.append(humidity);
+                liveContainer.append(windSpeed)
         });
 }
 
@@ -107,28 +107,24 @@ function searchDivSubmit(event) {
     getApi();
 }
 
-submitEl.addEventListener('click', function (event) {
+submitEl.addEventListener('click', function(event) {
     searchDivSubmit(event)
+ 
+    var storedWeather = {
+    weather: weather.value,
+    date: date.value,
+    humidity: humidity.value,
+    windSpeed: wind.speed.value,
+};
 
-    var lastWeather = JSON.parse(localStorage.getItem("storedWeather"));
-
-    if (lastWeather) {
-        var storedWeather = {
-            weather: lastWeather.main.temp,
-            date: lastWeather.dt_txt,
-            humidity: lastWeather.main.humidity,
-            windSpeed: lastWeather.main.speed,
-        };
-         localStorage.setItem("storedWeather", JSON.stringify(storedWeather));
-    renderWeather();
-    }
-
+localStorage.setItem("storedWeather", JSON.stringify(storedWeather));
+renderWeather();
 });
 
-function renderWeather() {
+function renderWeather(){
     var lastWeather = JSON.parse(localStorage.getItem("storedWeather"));
     console.log("Last Weather: ", lastWeather);
-}
+};
 
 
 
