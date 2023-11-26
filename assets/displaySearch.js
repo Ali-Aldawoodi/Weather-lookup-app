@@ -3,6 +3,7 @@ var liveContainer = document.querySelector('.live-weather')
 var apiKey = "a4bf9990bcf9632efd2074e14211ea95";
 var liveCardEl = document.querySelector('#live-card');
 
+
 function toFahrenheit(kelvin) {
     return ((kelvin - 273.15) * 9 / 5) + 32;
 }
