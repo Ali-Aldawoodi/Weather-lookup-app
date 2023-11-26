@@ -32,3 +32,11 @@ h2 {
     margin: 1;
 }
 
+h1 {
+    text-decoration: underline;
+}
+
+.live-weather {
+    border: solid;
+}
+
